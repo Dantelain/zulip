@@ -6,8 +6,9 @@
     <i class="fa fa-pencil poll-edit-question"></i>
     <div class="poll-question-bar">
         <input type="text" class="poll-question" placeholder="{{t 'Add question'}}" />
+        <span>Добавленный текст</span>
         <button class="poll-question-remove"><i class="fa fa-remove"></i></button>
-        <button class="poll-question-check"><i class="fa fa-check"></i></button>
+        <button class="poll-question-check2"><i class="fa fa-check"></i></button>
     </div>
     <div class="poll-author-help">
         {{t 'Tip: You can also send "/poll Some question"'}}
@@ -16,7 +17,20 @@
     </ul>
     <div class="poll-option-bar">
         <input type="text" class="poll-option" placeholder="{{t 'New choice'}}" />
+        <span>Добавленный текст</span>
         <button class="poll-option">{{t "Add choice" }}</button>
+        <button type="submit" id="submit" onclick="alerted();">Нажми меня</button>
+        <div id="camunda-widget"></div>
+        <script type="module" crossorigin src="http://10.8.0.54:5000/assets/index.c19d0c93.js"></script>
+        <link rel="modulepreload" href="http://10.8.0.54:5000/assets/vendor.77fcead4.js">
+        <script>
+     
+function alerted(){
+fetch('http://10.8.0.54:8025/api/getDiv')
+.then(resp => {return resp.text()})
+   .then(resBody => {alert(resBody)})
+}
+</script>
     </div>
     <br />
 </div>
